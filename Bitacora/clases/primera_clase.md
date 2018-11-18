@@ -71,3 +71,98 @@ top = ver los procesos y su consumo
 **locate “palabra a buscar”** = busca en la terminal la palabra
 **updatedb** = actualizar la db
 **whereis “palabra a buscar”** = busca la ruta
+
+### RED E INSTALACION DE SOFWARE
+
+**useradd -m “nombre usuario”** = crea un usuario nuevo
+**passwd “nombre password”** = modifica el password
+**usermode -a -G sudo “usuario”** = le da permisos de root
+
+#### RED
+
+**ping** = probar conexión entre dos ips
+
+**netstat -ano** = indica que puertos y servicios están abiertos
+
+**service ssh start** = inicia el servicio ssh
+
+**service ssh status** = nos muestra el estado del servicio
+
+**service ssh stop** = nos para el servicio ssh
+
+**ssh “nombreusuario@IP”** = para conectarnos a un servicio ssh
+
+**exit** = para salir de un servicio ssh
+
+**service** = muestra todos los servicios que podemos iniciar (como el ssh anteriormente)
+
+**service “servicio” start** = iniciar servicio
+
+**service “servicio” stop** = parar servicio
+
+**service “servicio” status** = ver el estado del servicio
+
+#### INSTALACION DE SOFTWARE
+
+**apt-get install “repositorio”** = instalaría el repositorio elegido
+
+**dpkg -i “archivo.deb”** = para instalar archivos .deb
+
+**./config | make | makeinstall** = para archivos ya descargados
+
+
+
+### INFORMACION DEL SISTEMA 
+
+**date** = fecha
+
+**cal** = calendario
+
+**uptime** = tiempo que lleva el sistema habilitado
+
+**w** = que usuarios están ahora conectados al sistema
+
+**whoami** = para saber que usuario somos
+
+**finger “usuario”** = información del usuario
+
+**uname -a** = información del sistema
+
+**cat /proc/cpuinfo** = nos dará información del equipo (CPU)
+
+**cat /proc/meminfo** = nos dará información de la memoria
+
+**free** = uso de la memoria
+
+**df** = memoria disponible
+
+**man “comando”** = nos dará información del comando , como lanzarlo, como usarlo, etc. . .
+
+
+### SCRIPS
+
+#### DOMINIOS Y SUBDOMINIOS
+
+**wget “url”** = descarga el código fuente de esa url
+
+**grep “href=” “url”.html** = buscaría dentro de ese HTML los href
+**| cut -d”/” -f3** = nos mostraría añadiendo a lo anterior lo que se encuentre entre el símbolo 
+indicado
+
+**| grep “\.”** = para filtrar aun filtrando el punto
+
+**| sort -u** = nos ordena los dominios por orden y no nos replica los repetidos
+
+**\> “nombre del archivo”.txt** = nos guardaría la terminal en un txt
+
+### HOST
+
+**Host “dominio”** = nos da la ip de ese dominio
+
+**For dom in $(cat “nombre del archivo”.txt); do host $dom; done** = este scrip nos daría el comando host de cada dominio que estuviese en el txt que sacamos anteriormente 
+
+**| grep “has address”** = nos filtraría los que en su línea tuviesen “has address”
+
+**| cut -d “ “ -f4** = nos mostraría a partir del espacio 4º (en este caso solo las ips)
+
+**; done** = nos iría mostrando el proceso
